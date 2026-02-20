@@ -21,13 +21,105 @@
     </ul>
   </nav>
 
-  <!-- BEGIN AADS AD UNIT 2416821 -->
+ <!-- BEGIN AADS AD UNIT 2386687 -->
 
-<div id="frame" style="width: 100%;margin: auto;position: relative; z-index: 99998;">
-          <div id="aads-ad-container-2416821" data-src="//dynamic.a-ads.com/test/?size=Adaptive&amp;background_color=22a2d8&amp;title_color=c81212&amp;title_hover_color=cbc0c0&amp;text_color=2d3631&amp;link_color=756f42&amp;link_hover_color=7110a1" data-style="border:0; padding:0; width:70%; height:auto; overflow:hidden;display: block;margin: auto" data-fallback="FALLBACK CODE"></div>
+<div style="position: absolute; z-index: 99999">
+      <input autocomplete="off" type="checkbox" id="aadsstickymluo0eiv" hidden="">
+      <div style="padding-top: 0; padding-bottom: 0;">
+        <div style="width:15%;height:100%;position:fixed;text-align:center;font-size:0;top:50%;transform:translateY(-50%);left:0;min-width:100px">
+          <label for="aadsstickymluo0eiv" style="bottom: 24px;margin:0 auto;right:0;left:0;max-width:24px; position: absolute;border-radius: 4px; background: rgba(248, 248, 249, 0.70); padding: 4px;z-index: 99999;cursor:pointer">
+            <svg fill="#000000" height="16px" width="16px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 490 490">
+              <polygon points="456.851,0 245,212.564 33.149,0 0.708,32.337 212.669,245.004 0.708,457.678 33.149,490 245,277.443 456.851,490 489.292,457.678 277.331,245.004 489.292,32.337 "></polygon>
+            </svg>
+          </label>
+          <div id="frame" style="width: 100%;margin: auto;position: relative; z-index: 99998;height:100%; display: flex;flex-direction: column; justify-content: center">
+                          <div style="width: 100%;text-align:center;">
+                            <a style="display:inline-block;font-size: 13px;color: #263238;padding: 4px 10px;background: #F8F8F9;text-decoration: none; border-radius: 4px 4px 0 0;" id="frame-link" target="_blank" href="https://aads.com/campaigns/new?source_id=2386687&amp;source_type=ad_unit&amp;partner=2386687">
+                              Advertise here
+                            </a>
+                          </div>
+                        <div id="aads-ad-container-2386687" data-src="//dynamic.a-ads.com/2386687/?size=Adaptive&amp;background_color=0e576a&amp;title_color=beb66d&amp;title_hover_color=22c48a&amp;text_color=b56f86" data-style="border:0; padding:0; width:70%; height:70%; overflow:hidden; margin: 0 auto" data-fallback="TEST FALLBACK"></div>
+                    </div>
         </div>
+        <style>
+      #aadsstickymluo0eiv:checked + div {
+        display: none;
+      }
+    </style>
+    </div></div>
 
-<!-- END AADS AD UNIT 2416821 -->
+<!-- END AADS AD UNIT 2386687 -->
+
+<!-- BEGIN AADS FALLBACK SCRIPT - include only once per page, even if you have multiple ad units -->
+
+<script>document.addEventListener('DOMContentLoaded', function() {
+  (function initAds() {
+    if (window.aadsFallbackScriptLoaded) return;
+    window.aadsFallbackScriptLoaded = true;
+
+    var containers = document.querySelectorAll('div[id^="aads-ad-container-"]');
+
+    containers.forEach(function(container) {
+      loadAd(container);
+    });
+
+    function loadAd(container) {
+      var idParts = container.id.split('-');
+      var adUnit = idParts[idParts.length - 1];
+
+      var adUrl = container.dataset.src || ('//dynamic.a-ads.com/' + adUnit);
+      var iframeStyle = container.dataset.style || 'width:300px;height:250px;border:0;padding:0;background:transparent;';
+      var fallbackHtml = container.dataset.fallback || '';
+
+      var iframe = document.createElement('iframe');
+      iframe.setAttribute('data-aa', adUnit);
+      iframe.style.cssText = iframeStyle;
+
+      var absoluteUrl = new URL(adUrl, location.origin).href;
+
+      fetch(absoluteUrl)
+        .then(function(response) { return response.text(); })
+        .then(function(html) {
+          if (!html.trim()) throw new Error('Empty ad content');
+
+          var refreshMatch = html.match(/<meta[^>]+content=['"](\\d+)['"][^>]+http-equiv=['"]refresh['"]/i);
+          var refreshTime = refreshMatch ? parseInt(refreshMatch[1], 10) : 0;
+
+          html = html.replace(/<meta[^>]+http-equiv=['"]?refresh['"][^>]*>/i, '');
+
+          iframe.removeAttribute('src');
+          container.innerHTML = '';
+          container.appendChild(iframe);
+          iframe.sandbox = 'allow-scripts allow-same-origin allow-popups';
+          iframe.srcdoc = html;
+
+          if (refreshTime > 0) {
+            setTimeout(function() { loadAd(container); }, refreshTime * 1000);
+          }
+        })
+        .catch(function() {
+          container.innerHTML = fallbackHtml;
+
+          var scripts = container.querySelectorAll('script');
+          scripts.forEach(function(oldScript) {
+            var newScript = document.createElement('script');
+            if (oldScript.src) {
+              newScript.src = oldScript.src;
+              newScript.async = oldScript.async;
+            } else {
+              newScript.textContent = oldScript.textContent;
+            }
+            Array.from(oldScript.attributes).forEach(function(attr) {
+              if (attr.name !== 'src') newScript.setAttribute(attr.name, attr.value);
+            });
+            oldScript.parentNode.replaceChild(newScript, oldScript);
+          });
+        });
+    }
+  })();
+});</script>
+
+<!-- END AADS FALLBACK SCRIPT -->
 
 <!-- BEGIN AADS FALLBACK SCRIPT - include only once per page, even if you have multiple ad units -->
 
